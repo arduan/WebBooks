@@ -26,3 +26,10 @@ class Author(models.Model):
     def __str__(self):
         return self.last_name
 
+
+class Book(models.Model):
+    title = models.CharField(max_length=200, help_text='Введите название книги', verbose_name='Название книги')
+    genre = models.ForeignKey('Genre', on_delete=models.CASCADE, help_text='Выберите жанр книги',
+                              verbose_name='Жанр книги', null=True)
+    language = models.ForeignKey('Language', on_delete=models.CASCADE, help_text='Выберите язык книги', verbose_name = 'Язык книги', null=True)
+    author = models.ManyToManyField('Author', help_text='Выберите автора книги', null=True)
