@@ -4,11 +4,11 @@ from django.contrib import admin
 from .models import Author, Book, Genre, Language, Status, BookInstance
 
 
-# class AuthorAdmin(admin.ModelAdmin):
-#     list_display = ('last_name', 'first_name', 'date_of_birth', 'date_of_death')
+class AuthorAdmin(admin.ModelAdmin):
+    list_display = ('last_name', 'first_name', 'data_of_birth', 'data_of_death')
 
 
-# admin.site.register(Author, AuthorAdmin)
+admin.site.register(Author, AuthorAdmin)
 
 # admin.site.register(Book)
 admin.site.register(Genre)
