@@ -33,7 +33,7 @@ class Book(models.Model):
                               verbose_name='Жанр книги', null=True)
     language = models.ForeignKey('Language', on_delete=models.CASCADE, help_text='Выберите язык книги',
                                  verbose_name='Язык книги', null=True)
-    author = models.ManyToManyField('Author', help_text='Выберите автора книги', verbose_name='Автор книги', null=True)
+    author = models.ManyToManyField('Author', help_text='Выберите автора книги', verbose_name='Автор книги')
     summary = models.TextField(max_length=1000, help_text='Введите краткое описание книги',
                                verbose_name='Анотация книги')
     isbn = models.CharField(max_length=13, help_text='Должно содержать 13 символов', verbose_name='ISBN книги')
@@ -71,3 +71,5 @@ class BookInstance(models.Model):
 
     def __str__(self):
         return '%s %s %s' % (self.inv_nom, self.book, self.status)
+
+
