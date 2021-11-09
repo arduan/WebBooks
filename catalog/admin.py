@@ -10,7 +10,6 @@ class AuthorAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Author, AuthorAdmin)
-
 # admin.site.register(Book)
 admin.site.register(Genre)
 admin.site.register(Language)
@@ -28,3 +27,7 @@ class BookAdmin(admin.ModelAdmin):
 @admin.register(BookInstance)
 class BookInstanceAdmin(admin.ModelAdmin):
     list_filter = ('book', 'status')
+    fieldsets = (
+        ('Экземпляр книги', {'fields':('book', 'imprint', 'inv_nom')}),
+        ('Статус и окончание его действия', {'fields': ('status', 'due_back')})
+    )
