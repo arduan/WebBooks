@@ -15,10 +15,9 @@ admin.site.register(Genre)
 admin.site.register(Language)
 admin.site.register(Status)
 
+
 class BookInstanceInline(admin.TabularInline):
     model = BookInstance
-
-
 
 
 @admin.register(Book)
