@@ -1,7 +1,7 @@
 {% extends 'base_generic.html' %}
 
 {% block content %}
-<h1>Название книги :  {{ book.title }}</h1>
+<h1 xmlns="http://www.w3.org/1999/html">Название книги :  {{ book.title }}</h1>
 
 <p><strong>Жанр : </strong>{{ book.genre }}</p>
 <p><strong>Анотация : </strong>{{ book.summary }}</p>
@@ -22,6 +22,8 @@
         <p><strong>Издательство : </strong>{{ copy.imprint}}</p>
         <p class='text-muted'><strong>Инвентарный номер : </strong> {{ copy.id }}</p>
         <p><strong>Статус экземпляра книги в базе : </strong>{{copy.status}}</p>
+
+
 
     {% endfor %}
 </div>
