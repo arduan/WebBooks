@@ -6,8 +6,8 @@
     {% if author_list %}
         {% for author in author_list.all %}
         <p>{{ author.first_name }} {{ author.last_name }},
-            <strong>Родился - </strong>{{ author.date_of_birth }},
-            <strong>Умер - </strong>{{ author.date_of_death }}
+            <strong>Родился - </strong>{{ author.data_of_birth }},
+            <strong>Умер - </strong>{{ author.data_of_death }}
         </p>
         {% endfor %}
     {% else %}
