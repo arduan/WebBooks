@@ -11,14 +11,19 @@ def index(request):
     # Доступные книги (статус = "На складе")
     # Здесь метод 'all()' применен по умолчанию
     num_instances_available = BookInstance.objects.filter(status__exact=2).count()
-    # Авторы книг
+    # Авторы книг. Метод all() применен по умолчанию
     num_authors = Author.objects.count()
+
+    # Количество посещений этого view, подсчинанное в переменной session
+    num_visits = request.session.get('num_visits', 0)
+    request.session['num_visits'] = num_visits + 1
     # Отрисовка HTML-шаблона index.html  с данными внутри переменной context
     return render(request, 'index.html',
                   context={'num_books': num_books,
                            'num_instances': num_instances,
                            'num_instances_available': num_instances_available,
-                           'num_authors': num_authors, }
+                           'num_authors': num_authors,
+                           'num_visits': num_visits,}
                   )
 
 
