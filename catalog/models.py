@@ -24,11 +24,11 @@ class Language(models.Model):
 
 class Author(models.Model):
     first_name = models.CharField(max_length=100,
-                                  help_text="Введите имя автора",
-                                  verbose_name="Имя автора")
+                                  help_text="Введите имя больного",
+                                  verbose_name="Имя больного")
     last_name = models.CharField(max_length=100,
-                                 help_text="Введите фамилию автора",
-                                 verbose_name="Фамилия автора")
+                                 help_text="Введите фамилию больного",
+                                 verbose_name="Фамилия больного")
     data_of_birth = models.DateField(help_text="Введите дату рождения",
                                      verbose_name="Дата рождения",
                                      default=date.today,

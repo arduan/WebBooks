@@ -129,6 +129,7 @@ class BookDelete(DeleteView):
     success_url = reverse_lazy('books')
 
 
+
 '''
 def authors_add(request):
     if request.method == "POST":
