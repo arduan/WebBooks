@@ -81,7 +81,8 @@ class Status(models.Model):
 
     def __str__(self):
         return self.name
-
+class Sex(models.Model):
+    pass
 
 class BookInstance(models.Model):
     book = models.ForeignKey('Book', on_delete=models.CASCADE, null=True,
